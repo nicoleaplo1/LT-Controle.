@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-page">
+    <h2>Login</h2>
+    <input type="password" id="password" placeholder="Digite a senha">
+    <button onclick="login()">Entrar</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+
+  <div id="dashboard" style="display:none;">
+    <h2>Controle Financeiro</h2>
+    <form id="transaction-form">
+      <input type="text" id="item" placeholder="Item" required>
+      <input type="number" id="units" placeholder="Unidades" required>
+      <input type="number" id="value" placeholder="Valor" required>
+      <input type="text" id="responsible" placeholder="Responsável pela compra" required>
+      <input type="date" id="date" required>
+      <input type="file" id="receipt">
+      <select id="type">
+        <option value="entrada">Entrada</option>
+        <option value="saida">Saída</option>
+      </select>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <h3>Transações</h3>
+    <table id="transactions-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Unidades</th>
+          <th>Valor</th>
+          <th>Responsável</th>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Comprovante</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Saldo: R$ <span id="balance">0.00</span></h3>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
